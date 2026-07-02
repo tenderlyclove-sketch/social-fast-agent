@@ -27,15 +27,31 @@ export default function Home() {
                                                                         <main
                                                                               className="w-full p-4 rounded-xl bg-gray-800 border border-gray-700 text-white outline-none focus:border-blue-500"
                                                                                                                         >
-                                                                                                                              <h1 className="text-4xl font-extrabold text-center mb-2">
-                                                                                                                                🚀 Social Fast Agent
-                                                                                                                                </h1>
+                                                                                                                              
 
-                                                                                                                                <p className="text-center text-gray-400 mb-8">
-                                                                                                                                Generate viral content ideas in seconds with AI.
-                                                                                                                                </p>
-
-                                                                                                                                    <p>Create viral content ideas with AI.</p>
+                                            <h1
+                                              style={{
+                                                  fontSize: "3rem",
+                                                      textAlign: "center",
+                                                          color: "#ffffff",
+                                                              marginBottom: "10px",
+                                                                  fontWeight: "bold",
+                                                                    }}
+                                                                    >
+                                                                    🚀 Social Fast Agent
+                                                                    </h1>
+                                                                    
+                                                                    <p
+                                                                      style={{
+                                                                          textAlign: "center",
+                                                                              color: "#94a3b8",
+                                                                                  fontSize: "18px",
+                                                                                      marginBottom: "35px",
+                                                                                          lineHeight: "1.7",
+                                                                                            }}
+                                                                                            >
+                                                                                            Create viral content ideas, captions, scripts and marketing campaigns with AI.
+                                                                                            </p>                                                                                        <p>Create viral content ideas with AI.</p>
 
                                                                                                                                           <input
                                                                                                                                                   value={niche}
