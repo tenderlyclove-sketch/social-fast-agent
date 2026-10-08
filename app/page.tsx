@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [niche, setNiche] = useState("");
@@ -52,6 +53,19 @@ export default function Home() {
                                                                                             >
                                                                                             Create viral content ideas, captions, scripts and marketing campaigns with AI.
                                                                                             </p>                                                                                        <p>Create viral content ideas with AI.</p>
+
+                                                                    <Link
+                                                                      href="/dashboard"
+                                                                      style={{
+                                                                          display: "block",
+                                                                              marginTop: "18px",
+                                                                                  textAlign: "center",
+                                                                                      color: "#60a5fa",
+                                                                                          fontSize: "16px",
+                                                                                          }}
+                                                                                          >
+                                                                                          Open the Bible Series Studio →
+                                                                                          </Link>
 
                                                                                                                                           <input
                                                                                                                                                   value={niche}

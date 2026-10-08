@@ -28,3 +28,20 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - `curl -s -o /dev/null -w '%{http_code}' http://localhost:3000/` → `200`.
 - `curl -s -X POST http://localhost:3000/api/generate -H 'Content-Type: application/json' -d '{"niche":"fitness"}'`
   → `{"ideas":[...]}` with a valid key (10 numbered lines), or the 500 above without one.
+
+## Bible Series Studio (Phase 1)
+
+- `/dashboard` (`app/dashboard/`) is the outline studio: a "series bible" that acts as
+  the continuity lock, plus per-episode outlines that generate a shot list and a TTS
+  narration script. `/` still links to it.
+- Workspace state lives in **browser localStorage** under
+  `social-fast-agent.bible-studio.v1` (`app/dashboard/store.ts`). There is no database;
+  real storage is Phase 4.
+- Generation endpoints: `POST /api/shots` (outline → JSON shot list) and
+  `POST /api/script` (outline → plain TTS narration), both through `lib/openrouter.ts`
+  with the series bible appended by `lib/continuity.ts`. Share the same
+  `OPENROUTER_API_KEY`.
+- Both return **503** with a readable message when `OPENROUTER_API_KEY` is missing, and
+  **400** when the outline is empty, so the studio stays usable without a key.
+- Verify: open `/dashboard`, add an episode, fill the outline, press "Generate shot
+  list" — shot cards with a key, or the 503 message in the red alert without one.
