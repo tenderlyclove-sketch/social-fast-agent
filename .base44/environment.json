@@ -1,0 +1,12 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "OPENROUTER_API_KEY",
+      "description": "OpenRouter API key used by the /api/generate route (model meta-llama/llama-3.3-70b-instruct). Create one at https://openrouter.ai/keys",
+      "requiredAtBoot": false
+    }
+  ]
+}
